@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALAB Anlagenmonitoring wird geladen...</title>
+    <meta name="description" content="Professionelles Anlagenmonitoring für PV-Anlagen von ALAB Energiesysteme.">
+    <link rel="icon" type="image/x-icon" href="https://static.wixstatic.com/media/cac2b9_62e2dd76694e43c3810467fa4e633c6c~mv2.png">
+
+    <script>
+        // Pfad zu den jeweiligen Versionen der Webseite
+        const mobileVersion = 'alab-monitoring-mobile.html';
+        const desktopVersion = 'alab-monitoring-professional.html'; // Annahme basierend auf Ihrer README-Datei
+
+        // Regex zur Erkennung von mobilen Geräten
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        // Weiterleitungslogik
+        if (isMobile) {
+            // Wenn es ein mobiles Gerät ist, leite zur mobilen Version weiter.
+            if (window.location.pathname.indexOf(mobileVersion) === -1) {
+                window.location.href = mobileVersion;
+            }
+        } else {
+            // Ansonsten zur Desktop-Version weiterleiten.
+            if (window.location.pathname.indexOf(desktopVersion) === -1) {
+                window.location.href = desktopVersion;
+            }
+        }
+    </script>
+
+    <style>
+        /* Einfache Ladeanzeige für einen besseren Übergang */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #0f2533;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .loader {
+            border: 5px solid #e5e7eb;
+            border-top: 5px solid #d4af37; /* ALAB Gold */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .container p {
+            margin-top: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <p>Optimale Ansicht wird geladen...</p>
+    </div>
+
+    <noscript>
+        <h1>Bitte aktivieren Sie JavaScript</h1>
+        <p>Diese Seite benötigt JavaScript, um die korrekte Version für Ihr Gerät zu laden.</p>
+        <p>
+            Klicken Sie hier für die <a href="alab-monitoring-professional.html">Desktop-Version</a>.
+        </p>
+        <p>
+            Klicken Sie hier für die <a href="alab-monitoring-mobile.html">Mobile-Version</a>.
+        </p>
+    </noscript>
+</body>
+</html>
